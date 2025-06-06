@@ -22,7 +22,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section className="bg-black text-white px-6 md:px-20 py-16">
+    <section id="education" className="bg-black text-white px-6 md:px-20 py-16">
       <h2 className="text-3xl md:text-4xl font-bold mb-12">Education</h2>
 
       <div className="space-y-8">
