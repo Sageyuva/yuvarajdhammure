@@ -90,7 +90,7 @@ const Contact = () => {
         </div>
 
         <footer className="mt-12 text-center text-gray-500 text-sm">
-          © 2025 HAGUE. ALL RIGHTS RESERVED.
+          © 2025 Yuvaraj. ALL RIGHTS RESERVED.
         </footer>
       </div>
     </section>
