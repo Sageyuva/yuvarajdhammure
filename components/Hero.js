@@ -6,7 +6,7 @@ import TechStackGrid from "@/components/TechStackGrid";
 
 const Hero = () => {
   return (
-    <section id="about" className="min-h-screen w-full flex flex-col-reverse md:flex-row justify-center items-center px-6 md:px-20 bg-black text-white pt-20">
+    <section id="about" className="min-h-screen w-full flex flex-col-reverse md:flex-row justify-evenly items-center px-6 md:px-20 bg-black text-white pt-20">
       {/* LEFT: Hero Content */}
       <div className="flex flex-col justify-center max-w-2xl">
         <p className="text-sm mb-2 text-gray-400">Frontend Developer</p>
