@@ -16,10 +16,10 @@ const Navbar = () => {
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
-
   return (
-    <nav className="w-full fixed z-[500000]
-     backdrop-blur-md bg-black/30 text-white">
+    <section className="relative z-50 w-full items-center justify-center">
+      <nav className="w-full fixed z-[500000]
+     backdrop-blur-md bg-black/30 text-white   px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center py-4 px-6 md:px-12">
         <h1 className="text-white font-bold text-xl hover:cursor-pointer">Yuvaraj.</h1>
 
@@ -57,6 +57,7 @@ const Navbar = () => {
         </ul>
       )}
     </nav>
+    </section>
   );
 };
 

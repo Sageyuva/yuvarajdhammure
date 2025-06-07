@@ -39,7 +39,7 @@ const experienceData = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-black text-white px-6 md:px-20 py-16">
+    <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl md:text-4xl font-bold mb-12">Experience</h2>
 
       {experienceData.map((exp, idx) => (
