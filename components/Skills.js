@@ -49,6 +49,13 @@ const Skills = () => {
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
+                <Image src={ReactLogo} alt="React Native" width={40} height={40} />
+              </div>
+              <p className="mt-2 text-sm">React Native</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
                 <Image src={HtmlLogo} alt="HTML" width={40} height={40} />
               </div>
               <p className="mt-2 text-sm">HTML</p>
@@ -87,13 +94,13 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Tools & Platforms Section */}
+        {/* Version Control Section */}
         <div className="mt-10">
-          <h3 className="text-2xl font-semibold">Tools & Platforms</h3>
+          <h3 className="text-2xl font-semibold">Version Control</h3>
           <div className="mt-6 flex flex-wrap gap-8">
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
-                <Image  src={GitLogo} alt="Git" width={40} height={40} />
+                <Image src={GitLogo} alt="Git" width={40} height={40} />
               </div>
               <p className="mt-2 text-sm">Git</p>
             </div>
@@ -103,6 +110,13 @@ const Skills = () => {
               </div>
               <p className="mt-2 text-sm">GitHub</p>
             </div>
+          </div>
+        </div>
+
+        {/* Tools & Platforms Section */}
+        <div className="mt-10">
+          <h3 className="text-2xl font-semibold">Tools & Platforms</h3>
+          <div className="mt-6 flex flex-wrap gap-8">
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
                 <Image src={VscodeLogo} alt="VS Code" width={40} height={40} />

@@ -16,7 +16,7 @@ const Contact = () => {
             <ul className="mt-6 space-y-4">
               <li className="flex items-center">
                 <Mail className="w-6 h-6 mr-3 text-gray-400" />
-                <span>Yuvarajdhammure@gmail.com</span>
+                <span>Yuvarajdhammure@zohomail.in</span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-6 h-6 mr-3 text-gray-400" />
@@ -43,7 +43,7 @@ const Contact = () => {
           {/* Send Me a Message Section */}
           <div>
             <h3 className="text-2xl font-semibold">Send Me a Message</h3>
-            <form className="mt-6 space-y-4">
+            <form className="mt-6 space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium">
@@ -52,8 +52,10 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Your name"
-                    className="mt-1 w Odin-full p-3 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    className="mt-1 w-full p-3 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    suppressHydrationWarning
                   />
                 </div>
                 <div>
@@ -63,8 +65,10 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="Your email"
                     className="mt-1 w-full p-3 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    suppressHydrationWarning
                   />
                 </div>
                 </div>
@@ -74,14 +78,17 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   placeholder="Your message"
                   rows="4"
                   className="mt-1 w-full p-3 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  suppressHydrationWarning
                 />
               </div>
               <button
                 type="submit"
-                className="hover:cursor-pointer  w-full py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+                className="hover:cursor-pointer w-full py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+                suppressHydrationWarning
               >
                 Submit Message
               </button>

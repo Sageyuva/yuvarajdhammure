@@ -19,7 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans`} suppressHydrationWarning={true}>
+        {children}
+      </body>
     </html>
   );
 }
