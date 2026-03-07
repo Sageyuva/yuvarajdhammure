@@ -5,8 +5,7 @@
     "contact": {
       "email": "yuvarajdhammure@gmail.com",
       "phone": "+91-9686396288",
-      "location": "Bangalore",
-      "linkedin": "yuvaraj-dhammure"
+      "location": "Bangalore"
     },
     "description": "2.7 years of building and crafting high-performance frontend solutions. Specializing in scalable React ecosystems and obsessed with pixel-perfect UI/UX."
   },
@@ -14,9 +13,31 @@
     "summary": "Frontend Developer with a proven track record of improving application performance by 30% through optimized code and advanced state management. Expert in the MERN stack, converting complex business requirements into responsive, mobile-first user interfaces."
   },
   "skills": {
-    "frontend": ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Redux Toolkit", "Zustand", "HTML5", "CSS3"],
-    "ui_ux": ["Tailwind CSS", "Material UI (MUI)", "ShadCN", "Figma to Code"],
-    "backend_tools": ["Node.js", "Express.js", "REST APIs", "Axios", "Git", "AWS EC2", "Postman"]
+    "frontend": [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Redux Toolkit",
+      "Zustand",
+      "HTML5",
+      "CSS3"
+    ],
+    "ui_ux": [
+      "Tailwind CSS",
+      "Material UI (MUI)",
+      "ShadCN",
+      "Figma to Code"
+    ],
+    "backend_tools": [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Axios",
+      "Git",
+      "AWS EC2",
+      "Postman"
+    ]
   },
   "experience": [
     {
@@ -43,12 +64,21 @@
   "projects": [
     {
       "title": "Localization Management System",
-      "tech": ["Next.js", "TypeScript", "ShadCN", "AWS EC2"],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "ShadCN",
+        "AWS EC2"
+      ],
       "description": "A secure SaaS portal for 200+ clients featuring role-based authentication and automated AWS deployment workflows."
     },
     {
       "title": "Digital Billing System",
-      "tech": ["React.js", "Zustand", "REST APIs"],
+      "tech": [
+        "React.js",
+        "Zustand",
+        "REST APIs"
+      ],
       "description": "Created interactive invoice management with structured JSON data and third-party plugin integration (Gmail / AWS S3)."
     }
   ],

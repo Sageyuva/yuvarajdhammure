@@ -6,16 +6,16 @@ import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
 
-import reactLogo   from "@/assets/images/React.svg";
-import nextLogo    from "@/assets/images/Next.js.svg";
-import mongoLogo   from "@/assets/images/MongoDB.svg";
+import reactLogo from "@/assets/images/React.svg";
+import nextLogo from "@/assets/images/Next.js.svg";
+import mongoLogo from "@/assets/images/MongoDB.svg";
 import expressLogo from "@/assets/images/Express.svg";
 
 const TILES = [
-  { logo: reactLogo,   alt: "React.js",   invert: false, mt: ""       },
-  { logo: nextLogo,    alt: "Next.js",    invert: true,  mt: "mt-8"   },
-  { logo: mongoLogo,   alt: "MongoDB",    invert: false, mt: "-mt-8"  },
-  { logo: expressLogo, alt: "Express.js", invert: false, mt: ""       },
+  { logo: reactLogo, alt: "React.js", invert: false, mt: "" },
+  { logo: nextLogo, alt: "Next.js", invert: true, mt: "mt-8" },
+  { logo: mongoLogo, alt: "MongoDB", invert: false, mt: "-mt-8" },
+  { logo: expressLogo, alt: "Express.js", invert: false, mt: "" },
 ];
 
 export default function Hero({ data }: { data: any }) {
@@ -44,28 +44,15 @@ export default function Hero({ data }: { data: any }) {
         {/* ── Left ── */}
         <div className="flex flex-col gap-10">
 
-          {/* Status pill */}
-          <motion.span
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="self-start inline-flex items-center gap-2 text-xs font-medium text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 rounded-full px-4 py-1.5"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Open to opportunities
-          </motion.span>
-
           {/* Name block */}
           <div className="flex flex-col gap-2">
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-[clamp(3rem,8vw,6.5rem)] font-bold tracking-[-0.03em] text-white leading-[0.95]"
+              className="text-[clamp(2.2rem,4.5vw,4rem)] font-bold tracking-[-0.02em] text-white leading-[1.05]"
             >
-              {data.name.split(" ")[0]}
-              <br />
-              <span className="text-zinc-600">{data.name.split(" ")[1]}</span>
+              {data.name}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -77,28 +64,17 @@ export default function Hero({ data }: { data: any }) {
             </motion.p>
           </div>
 
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.44, ease: "easeOut" }}
-            className="text-lg text-zinc-400 leading-[1.8] max-w-lg"
-          >
-            {data.description}
-          </motion.p>
-
           {/* Contact chips */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.54, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.42, ease: "easeOut" }}
             className="flex flex-wrap gap-3"
           >
             {[
-              { icon: Mail,     label: data.contact.email,    href: `mailto:${data.contact.email}` },
-              { icon: Phone,    label: data.contact.phone,    href: `tel:${data.contact.phone}` },
-              { icon: MapPin,   label: data.contact.location, href: "#" },
-              { icon: Linkedin, label: "LinkedIn",             href: `https://linkedin.com/in/${data.contact.linkedin}` },
+              { icon: Mail, label: data.contact.email, href: `mailto:${data.contact.email}` },
+              { icon: Phone, label: data.contact.phone, href: `tel:${data.contact.phone}` },
+              { icon: MapPin, label: data.contact.location, href: "#" },
             ].map(({ icon: Icon, label, href }) => (
               <a
                 key={label}
@@ -112,6 +88,16 @@ export default function Hero({ data }: { data: any }) {
               </a>
             ))}
           </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.54, ease: "easeOut" }}
+            className="text-base text-zinc-400 leading-[1.8] max-w-lg"
+          >
+            {data.description}
+          </motion.p>
 
           {/* CTA buttons */}
           <motion.div
@@ -140,10 +126,10 @@ export default function Hero({ data }: { data: any }) {
             {TILES.map(({ logo, alt, invert, mt }) => (
               <div
                 key={alt}
-                className={`aspect-square rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm flex items-center justify-center p-8 shadow-2xl ${mt}`}
+                className={`aspect-square rounded-2xl border border-white/[0.08] bg-white/[0.06] backdrop-blur-sm flex items-center justify-center p-5 shadow-2xl ${mt}`}
               >
                 <Image
-                  src={logo} alt={alt} width={72} height={72}
+                  src={logo} alt={alt} width={52} height={52}
                   className={`w-full h-full object-contain ${invert ? "invert opacity-80" : "drop-shadow-lg"}`}
                 />
               </div>

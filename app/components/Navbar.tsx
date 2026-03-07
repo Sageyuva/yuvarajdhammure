@@ -37,7 +37,6 @@ export default function Navbar() {
           <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">
             YD
           </span>
-          <span className="w-1 h-1 rounded-full bg-emerald-400 group-hover:scale-150 transition-transform" />
         </Link>
 
         {/* Desktop links */}

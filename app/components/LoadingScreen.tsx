@@ -59,7 +59,7 @@ export default function LoadingScreen() {
       {/* Text */}
       <p
         ref={textRef}
-        className="text-xs font-mono tracking-[0.4em] text-zinc-600 uppercase opacity-0 translate-y-3"
+        className="text-sm font-semibold tracking-[0.35em] text-zinc-400 uppercase opacity-0 translate-y-3"
       >
         Welcome to Yuvaraj&apos;s Lab
       </p>
