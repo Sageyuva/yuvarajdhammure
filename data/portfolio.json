@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "name": "Yuvaraj Dhammure",
+    "title": "Software Engineer",
+    "contact": {
+      "email": "yuvarajdhammure@gmail.com",
+      "phone": "9686396288",
+      "location": "Bangalore"
+    },
+    "description": "2.7 years of building and crafting high-performance frontend solutions. Specializing in scalable React ecosystems and obsessed with pixel-perfect UI/UX.",
+    "experience": "2.7 years total"
+  },
+  "about": {
+    "summary": "A professional summary highlighting expertise in MERN stack, state management (Redux/Zustand), and performance optimization (30% improvement)."
+  },
+  "experience": [
+    {
+      "company": "Datagain Services",
+      "role": "React JS Developer"
+    },
+    {
+      "company": "ATEN Info Solutions",
+      "role": "Associate Software Engineer"
+    },
+    {
+      "company": "Vivarttana Technologies",
+      "role": "Intern"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Localization Management System"
+    },
+    {
+      "name": "Digital Billing System"
+    },
+    {
+      "name": "Business Development CRM"
+    }
+  ],
+  "education": [
+    {
+      "degree": "BCA",
+      "institution": "Sharnbasva University",
+      "score": "8.2 CGPA"
+    }
+  ]
+}
