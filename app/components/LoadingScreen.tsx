@@ -4,51 +4,65 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 export default function LoadingScreen() {
-  const [isLoading, setIsLoading] = useState(true);
-  const textRef = useRef<HTMLHeadingElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [done, setDone]     = useState(false);
+  const overlayRef          = useRef<HTMLDivElement>(null);
+  const lineRef             = useRef<HTMLDivElement>(null);
+  const textRef             = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    // Only run on client
     if (typeof window === "undefined") return;
-    
+
     const tl = gsap.timeline({
-      onComplete: () => {
-        setIsLoading(false);
-      },
+      onComplete: () => setDone(true),
     });
 
-    tl.to(textRef.current, {
-      opacity: 1,
-      duration: 1.5,
-      ease: "power2.inOut",
-    })
-      .to(textRef.current, {
-        opacity: 0,
-        duration: 1,
-        ease: "power2.inOut",
-        delay: 0.5,
+    tl
+      .to(lineRef.current, {
+        scaleX: 1,
+        duration: 1.1,
+        ease: "power3.inOut",
       })
-      .to(containerRef.current, {
+      .to(textRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      }, "-=0.3")
+      .to([textRef.current, lineRef.current], {
+        opacity: 0,
+        duration: 0.5,
+        delay: 0.6,
+        ease: "power2.in",
+      })
+      .to(overlayRef.current, {
         yPercent: -100,
-        duration: 0.8,
+        duration: 0.9,
         ease: "power4.inOut",
       });
   }, []);
 
-  if (!isLoading) return null;
+  if (done) return null;
 
   return (
     <div
-      ref={containerRef}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+      ref={overlayRef}
+      className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center gap-8"
     >
-      <h1
+      {/* Progress bar */}
+      <div className="w-48 h-px bg-zinc-900 overflow-hidden">
+        <div
+          ref={lineRef}
+          className="h-full bg-white origin-left scale-x-0"
+          style={{ transformOrigin: "left" }}
+        />
+      </div>
+      {/* Text */}
+      <p
         ref={textRef}
-        className="text-2xl md:text-4xl font-light tracking-widest text-zinc-300 opacity-0"
+        className="text-xs font-mono tracking-[0.4em] text-zinc-600 uppercase opacity-0 translate-y-3"
       >
         Welcome to Yuvaraj&apos;s Lab
-      </h1>
+      </p>
     </div>
   );
 }

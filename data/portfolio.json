@@ -4,45 +4,58 @@
     "title": "Software Engineer",
     "contact": {
       "email": "yuvarajdhammure@gmail.com",
-      "phone": "9686396288",
-      "location": "Bangalore"
+      "phone": "+91-9686396288",
+      "location": "Bangalore",
+      "linkedin": "yuvaraj-dhammure"
     },
-    "description": "2.7 years of building and crafting high-performance frontend solutions. Specializing in scalable React ecosystems and obsessed with pixel-perfect UI/UX.",
-    "experience": "2.7 years total"
+    "description": "2.7 years of building and crafting high-performance frontend solutions. Specializing in scalable React ecosystems and obsessed with pixel-perfect UI/UX."
   },
   "about": {
-    "summary": "A professional summary highlighting expertise in MERN stack, state management (Redux/Zustand), and performance optimization (30% improvement)."
+    "summary": "Frontend Developer with a proven track record of improving application performance by 30% through optimized code and advanced state management. Expert in the MERN stack, converting complex business requirements into responsive, mobile-first user interfaces."
+  },
+  "skills": {
+    "frontend": ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Redux Toolkit", "Zustand", "HTML5", "CSS3"],
+    "ui_ux": ["Tailwind CSS", "Material UI (MUI)", "ShadCN", "Figma to Code"],
+    "backend_tools": ["Node.js", "Express.js", "REST APIs", "Axios", "Git", "AWS EC2", "Postman"]
   },
   "experience": [
     {
       "company": "Datagain Services",
-      "role": "React JS Developer"
+      "role": "React JS Developer",
+      "duration": "12/2024 – 12/2025",
+      "highlights": [
+        "Led frontend for Translation and Billing portals for 500+ daily users.",
+        "Improved data loading time by 25% using optimized RESTful API requests.",
+        "Ensured 99.9% data accuracy through real-time synchronization with Axios."
+      ]
     },
     {
       "company": "ATEN Info Solutions",
-      "role": "Associate Software Engineer"
-    },
-    {
-      "company": "Vivarttana Technologies",
-      "role": "Intern"
+      "role": "Associate Software Engineer",
+      "duration": "01/2023 – 09/2024",
+      "highlights": [
+        "Increased mobile engagement by 40% by modernizing legacy UIs into responsive SPAs.",
+        "Reduced crash rates by 15% by configuring complex state with Redux Toolkit.",
+        "Cut future development effort by 10 hrs/week through component modularization."
+      ]
     }
   ],
   "projects": [
     {
-      "name": "Localization Management System"
+      "title": "Localization Management System",
+      "tech": ["Next.js", "TypeScript", "ShadCN", "AWS EC2"],
+      "description": "A secure SaaS portal for 200+ clients featuring role-based authentication and automated AWS deployment workflows."
     },
     {
-      "name": "Digital Billing System"
-    },
-    {
-      "name": "Business Development CRM"
+      "title": "Digital Billing System",
+      "tech": ["React.js", "Zustand", "REST APIs"],
+      "description": "Created interactive invoice management with structured JSON data and third-party plugin integration (Gmail / AWS S3)."
     }
   ],
-  "education": [
-    {
-      "degree": "BCA",
-      "institution": "Sharnbasva University",
-      "score": "8.2 CGPA"
-    }
-  ]
+  "education": {
+    "degree": "Bachelor of Computer Applications (BCA)",
+    "institution": "Sharnbasva University",
+    "score": "8.2 CGPA",
+    "period": "2019 – 2022"
+  }
 }

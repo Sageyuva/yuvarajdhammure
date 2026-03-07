@@ -2,121 +2,152 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
 
-import reactLogo from "@/assets/images/React.svg";
-import nextLogo from "@/assets/images/Next.js.svg";
-import mongoLogo from "@/assets/images/MongoDB.svg";
+import reactLogo   from "@/assets/images/React.svg";
+import nextLogo    from "@/assets/images/Next.js.svg";
+import mongoLogo   from "@/assets/images/MongoDB.svg";
 import expressLogo from "@/assets/images/Express.svg";
+
+const TILES = [
+  { logo: reactLogo,   alt: "React.js",   invert: false, mt: ""       },
+  { logo: nextLogo,    alt: "Next.js",    invert: true,  mt: "mt-8"   },
+  { logo: mongoLogo,   alt: "MongoDB",    invert: false, mt: "-mt-8"  },
+  { logo: expressLogo, alt: "Express.js", invert: false, mt: ""       },
+];
 
 export default function Hero({ data }: { data: any }) {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!gridRef.current) return;
-    const items = gridRef.current.children;
-
-    Array.from(items).forEach((item, index) => {
-      gsap.to(item, {
-        y: `random(-20, 20)`,
-        x: `random(-10, 10)`,
-        rotation: `random(-5, 5)`,
+    Array.from(gridRef.current.children).forEach((el, i) => {
+      gsap.to(el, {
+        y: `random(-18, 18)`,
+        x: `random(-8, 8)`,
+        rotation: `random(-3, 3)`,
         duration: `random(3, 5)`,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        delay: index * 0.2,
+        delay: i * 0.35,
       });
     });
   }, []);
 
   return (
-    <section id="home" className="min-h-screen pt-32 pb-16 flex items-center justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
-        {/* Left Side */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col gap-6"
-        >
-          <div>
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-2 text-white"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+    <section id="home" className="min-h-screen flex items-center pt-28 pb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-20 items-center w-full">
+
+        {/* ── Left ── */}
+        <div className="flex flex-col gap-10">
+
+          {/* Status pill */}
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="self-start inline-flex items-center gap-2 text-xs font-medium text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 rounded-full px-4 py-1.5"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Open to opportunities
+          </motion.span>
+
+          {/* Name block */}
+          <div className="flex flex-col gap-2">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="text-[clamp(3rem,8vw,6.5rem)] font-bold tracking-[-0.03em] text-white leading-[0.95]"
             >
-              {data.name}
+              {data.name.split(" ")[0]}
+              <br />
+              <span className="text-zinc-600">{data.name.split(" ")[1]}</span>
             </motion.h1>
-            <motion.h2 
-              className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 to-zinc-600 font-medium"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.32, ease: "easeOut" }}
+              className="text-sm font-mono text-zinc-500 tracking-[0.2em] uppercase mt-4"
             >
               {data.title}
-            </motion.h2>
+            </motion.p>
           </div>
 
-          <motion.div 
-            className="flex flex-col gap-4 text-zinc-300 mt-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="flex items-center gap-4 group">
-              <div className="p-2 rounded-full bg-zinc-900 border border-zinc-800 group-hover:border-zinc-600 transition-colors">
-                <Mail className="w-5 h-5 text-zinc-400" />
-              </div>
-              <span className="text-lg">{data.contact.email}</span>
-            </div>
-            <div className="flex items-center gap-4 group">
-              <div className="p-2 rounded-full bg-zinc-900 border border-zinc-800 group-hover:border-zinc-600 transition-colors">
-                <Phone className="w-5 h-5 text-zinc-400" />
-              </div>
-              <span className="text-lg">{data.contact.phone}</span>
-            </div>
-            <div className="flex items-center gap-4 group">
-              <div className="p-2 rounded-full bg-zinc-900 border border-zinc-800 group-hover:border-zinc-600 transition-colors">
-                <MapPin className="w-5 h-5 text-zinc-400" />
-              </div>
-              <span className="text-lg">{data.contact.location}</span>
-            </div>
-          </motion.div>
-
-          <motion.p 
-            className="text-lg text-zinc-400 max-w-lg mt-6 leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.44, ease: "easeOut" }}
+            className="text-lg text-zinc-400 leading-[1.8] max-w-lg"
           >
             {data.description}
           </motion.p>
-        </motion.div>
 
-        {/* Right Side (Anti-gravity grid) */}
+          {/* Contact chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.54, ease: "easeOut" }}
+            className="flex flex-wrap gap-3"
+          >
+            {[
+              { icon: Mail,     label: data.contact.email,    href: `mailto:${data.contact.email}` },
+              { icon: Phone,    label: data.contact.phone,    href: `tel:${data.contact.phone}` },
+              { icon: MapPin,   label: data.contact.location, href: "#" },
+              { icon: Linkedin, label: "LinkedIn",             href: `https://linkedin.com/in/${data.contact.linkedin}` },
+            ].map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium text-zinc-400 border border-zinc-800 bg-zinc-900/40 hover:border-zinc-600 hover:text-white hover:bg-zinc-800/40 transition-all duration-200"
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                {label}
+              </a>
+            ))}
+          </motion.div>
+
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.62, ease: "easeOut" }}
+            className="flex items-center gap-4"
+          >
+            <a href="#contact" className="px-7 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-100 transition-colors">
+              Get in touch
+            </a>
+            <a href="#projects" className="px-7 py-3.5 text-sm font-semibold text-zinc-400 hover:text-white border border-zinc-800 rounded-full hover:border-zinc-500 transition-colors">
+              View work
+            </a>
+          </motion.div>
+        </div>
+
+        {/* ── Right: floating tech grid ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative lg:h-[500px] flex items-center justify-center lg:justify-end"
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="flex justify-center lg:justify-end"
         >
-          <div ref={gridRef} className="grid grid-cols-2 gap-6 w-full max-w-[400px]">
-            <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/60 p-8 rounded-3xl flex items-center justify-center shadow-2xl shadow-black/50 aspect-square">
-              <Image src={reactLogo} alt="React" width={90} height={90} className="drop-shadow-[0_0_15px_rgba(97,218,251,0.5)]" />
-            </div>
-            <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/60 p-8 rounded-3xl flex items-center justify-center shadow-2xl shadow-black/50 aspect-square lg:mt-16">
-              <Image src={nextLogo} alt="Next.js" width={90} height={90} className="filter invert opacity-90 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
-            </div>
-            <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/60 p-8 rounded-3xl flex items-center justify-center shadow-2xl shadow-black/50 aspect-square lg:-mt-16">
-              <Image src={mongoLogo} alt="MongoDB" width={90} height={90} className="drop-shadow-[0_0_15px_rgba(71,162,72,0.4)]" />
-            </div>
-            <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/60 p-8 rounded-3xl flex items-center justify-center shadow-2xl shadow-black/50 aspect-square">
-              <Image src={expressLogo} alt="Express.js" width={90} height={90} className="opacity-90 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
-            </div>
+          <div ref={gridRef} className="grid grid-cols-2 gap-4 w-full max-w-[340px]">
+            {TILES.map(({ logo, alt, invert, mt }) => (
+              <div
+                key={alt}
+                className={`aspect-square rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm flex items-center justify-center p-8 shadow-2xl ${mt}`}
+              >
+                <Image
+                  src={logo} alt={alt} width={72} height={72}
+                  className={`w-full h-full object-contain ${invert ? "invert opacity-80" : "drop-shadow-lg"}`}
+                />
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
