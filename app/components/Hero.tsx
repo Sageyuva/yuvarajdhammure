@@ -28,11 +28,11 @@ export default function Hero({ data }: { data: any }) {
         y: `random(-18, 18)`,
         x: `random(-8, 8)`,
         rotation: `random(-3, 3)`,
-        duration: `random(3, 5)`,
+        duration: `random(1.5, 2.5)`,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        delay: i * 0.35,
+        delay: i * 0.2,
       });
     });
   }, []);
@@ -122,14 +122,14 @@ export default function Hero({ data }: { data: any }) {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="flex justify-center lg:justify-end"
         >
-          <div ref={gridRef} className="grid grid-cols-2 gap-4 w-full max-w-[340px]">
+          <div ref={gridRef} className="grid grid-cols-2 gap-4 w-full max-w-[260px]">
             {TILES.map(({ logo, alt, invert, mt }) => (
               <div
                 key={alt}
-                className={`aspect-square rounded-2xl border border-white/[0.08] bg-white/[0.06] backdrop-blur-sm flex items-center justify-center p-5 shadow-2xl ${mt}`}
+                className={`aspect-square rounded-2xl border border-white/[0.08] bg-white/[0.06] backdrop-blur-sm flex items-center justify-center p-4 shadow-2xl ${mt}`}
               >
                 <Image
-                  src={logo} alt={alt} width={52} height={52}
+                  src={logo} alt={alt} width={40} height={40}
                   className={`w-full h-full object-contain ${invert ? "invert opacity-80" : "drop-shadow-lg"}`}
                 />
               </div>

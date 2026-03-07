@@ -35,8 +35,15 @@
       "REST APIs",
       "Axios",
       "Git",
-      "AWS EC2",
       "Postman"
+    ],
+    "ai": [
+      "Cursor",
+      "Claude Code",
+      "Antigravity",
+      "V0",
+      "lovable.ai",
+      "Bolt"
     ]
   },
   "experience": [
@@ -45,9 +52,10 @@
       "role": "React JS Developer",
       "duration": "12/2024 – 12/2025",
       "highlights": [
-        "Led frontend for Translation and Billing portals for 500+ daily users.",
-        "Improved data loading time by 25% using optimized RESTful API requests.",
-        "Ensured 99.9% data accuracy through real-time synchronization with Axios."
+        "Led frontend development for Translation and Billing Management portals, supporting 500+ daily active users with React.js and Next.js, delivering scalable web applications.",
+        "Programmed interactive dashboards using React.js, Next.js, and RESTful APIs, improving data loading time by 25% through optimized API requests and efficient state management.",
+        "Integrated real-time data synchronization using Axios and asynchronous data handling, ensuring 99.9% data accuracy and consistent client workflows.",
+        "Collaborated with cross-functional teams (Product, Backend, QA, Design) to define technical requirements and sprint roadmaps, achieving a 100% on-time delivery rate for all sprint milestones."
       ]
     },
     {
@@ -55,9 +63,19 @@
       "role": "Associate Software Engineer",
       "duration": "01/2023 – 09/2024",
       "highlights": [
-        "Increased mobile engagement by 40% by modernizing legacy UIs into responsive SPAs.",
-        "Reduced crash rates by 15% by configuring complex state with Redux Toolkit.",
-        "Cut future development effort by 10 hrs/week through component modularization."
+        "Modernized legacy user interfaces into responsive Single Page Applications (SPAs) using React.js, increasing mobile user engagement by 40% through mobile-first and responsive design principles.",
+        "Configured complex state management with Redux Toolkit, enhancing application stability and reducing crash rates by 15% through predictable state handling and optimized data flow.",
+        "Partnered with UI/UX designers to create reusable, precise components, resulting in a 20% increase in user session duration and improved interface consistency.",
+        "Refactored and modularized the frontend codebase with a component-based architecture, cutting future development effort by approximately 10 hours per week and improving long-term maintainability."
+      ]
+    },
+    {
+      "company": "VIVARTTANA TECHNOLOGIES",
+      "role": "Associate Software Intern",
+      "duration": "05/2022 – 07/2022",
+      "highlights": [
+        "Contributed to the frontend architecture of a high-traffic e-commerce platform, translating Figma designs into clean, semantic HTML5 and CSS3, ensuring responsive layouts and cross-browser compatibility.",
+        "Identified and resolved 50+ critical UI bugs during the QA and testing phase, significantly improving application stability, usability, and pre-launch quality."
       ]
     }
   ],
@@ -70,16 +88,39 @@
         "ShadCN",
         "AWS EC2"
       ],
-      "description": "A secure SaaS portal for 200+ clients featuring role-based authentication and automated AWS deployment workflows."
+      "description": "Coded a secure, scalable SaaS portal standardizing services for 200+ clients. Engineered role-based authentication and automated deployment workflows on AWS EC2.",
+      "bullets": [
+        "Engineered role-based authentication and authorization in Next.js, enforcing strict data security.",
+        "Hosted on AWS EC2 using proxy servers (PM2) ensuring high availability.",
+        "Automated deployment workflows with custom scripts for auto-redeployment."
+      ]
     },
     {
       "title": "Digital Billing System",
       "tech": [
         "React.js",
         "Zustand",
-        "REST APIs"
+        "REST APIs",
+        "CSS"
       ],
-      "description": "Created interactive invoice management with structured JSON data and third-party plugin integration (Gmail / AWS S3)."
+      "description": "Developed an Invoices screen allowing users to view, create, and manage invoices with structured JSON data and third-party integrations.",
+      "bullets": [
+        "Built a Plugins management interface to fetch and integrate data across Gmail and AWS S3.",
+        "Streamlined third-party data integration using REST APIs and JSON-based workflows."
+      ]
+    },
+    {
+      "title": "Business Development CRM",
+      "tech": [
+        "React.js",
+        "Tailwind CSS",
+        "Axios"
+      ],
+      "description": "Spearheaded the creation of a real-time data visualization dashboard improving data accuracy by 7% identified by cross-referencing two data sources.",
+      "bullets": [
+        "Created an interactive real-time data visualization dashboard.",
+        "Improved data accuracy and cross-referencing capabilities across multiple sources."
+      ]
     }
   ],
   "education": {

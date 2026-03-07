@@ -25,7 +25,7 @@ export default function Education({ data }: { data: any }) {
       {/* Score */}
       <div className="flex flex-col items-center justify-center p-7 border-t lg:border-t-0 lg:border-l border-zinc-800/60 bg-zinc-900/20">
         <span className="text-4xl font-bold text-white tracking-tight leading-none">{data.score.split(" ")[0]}</span>
-        <span className="text-xs text-zinc-600 mt-1.5 tracking-wider uppercase">CGPA</span>
+        <span className="text-xs text-zinc-300 mt-1.5 tracking-wider uppercase">CGPA</span>
       </div>
     </motion.div>
   );
