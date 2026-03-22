@@ -9,6 +9,7 @@ import Projects      from "./components/Projects";
 import Education     from "./components/Education";
 import Contact       from "./components/Contact";
 import portfolioData from "../data/portfolio.json";
+import FloatingResumeButton from "./components/FloatingResumeButton";
 
 /* ── Shared section heading ────────────────────────────────────────── */
 function SectionHeading({ num, title }: { num: string; title: string }) {
@@ -73,6 +74,7 @@ export default function Home() {
       </div>
 
       <Footer />
+      <FloatingResumeButton />
     </main>
   );
 }
