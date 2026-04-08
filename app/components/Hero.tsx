@@ -45,12 +45,12 @@ export default function Hero({ data }: { data: any }) {
         <div className="flex flex-col gap-10">
 
           {/* Name block */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-[clamp(2.2rem,4.5vw,4rem)] font-bold tracking-[-0.02em] text-white leading-[1.05]"
+              className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.05]"
             >
               {data.name}
             </motion.h1>
@@ -58,7 +58,7 @@ export default function Hero({ data }: { data: any }) {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.32, ease: "easeOut" }}
-              className="text-sm font-mono text-zinc-500 tracking-[0.2em] uppercase mt-4"
+              className="text-sm font-mono text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 tracking-[0.2em] uppercase mt-2 font-semibold"
             >
               {data.title}
             </motion.p>
@@ -81,7 +81,7 @@ export default function Hero({ data }: { data: any }) {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium text-zinc-400 border border-zinc-800 bg-zinc-900/40 hover:border-zinc-600 hover:text-white hover:bg-zinc-800/40 transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium text-zinc-300 glass-card hover:text-blue-200 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-300"
               >
                 <Icon className="w-3.5 h-3.5 shrink-0" />
                 {label}
@@ -94,7 +94,7 @@ export default function Hero({ data }: { data: any }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.54, ease: "easeOut" }}
-            className="text-base text-zinc-400 leading-[1.8] max-w-lg"
+            className="text-base text-zinc-300/90 leading-[1.8] max-w-lg"
           >
             {data.description}
           </motion.p>
@@ -106,10 +106,10 @@ export default function Hero({ data }: { data: any }) {
             transition={{ duration: 0.6, delay: 0.62, ease: "easeOut" }}
             className="flex items-center gap-4"
           >
-            <a href="#contact" className="px-7 py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-100 transition-colors">
+            <a href="#contact" className="px-7 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg accent-glow-blue text-sm font-semibold rounded-full hover:from-blue-500 hover:to-purple-500 hover:scale-105 active:scale-95 transition-all">
               Get in touch
             </a>
-            <a href="#projects" className="px-7 py-3.5 text-sm font-semibold text-zinc-400 hover:text-white border border-zinc-800 rounded-full hover:border-zinc-500 transition-colors">
+            <a href="#projects" className="px-7 py-3.5 text-sm font-semibold text-blue-100 hover:text-white glass border border-blue-500/30 rounded-full hover:border-blue-400/60 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all">
               View work
             </a>
           </motion.div>
@@ -120,17 +120,19 @@ export default function Hero({ data }: { data: any }) {
           initial={{ opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="flex justify-center lg:justify-end"
+          className="flex justify-center lg:justify-end group"
         >
-          <div ref={gridRef} className="grid grid-cols-2 gap-4 w-full max-w-[260px]">
+          <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none z-0" />
+          
+          <div ref={gridRef} className="grid grid-cols-2 gap-4 w-full max-w-[260px] relative z-10">
             {TILES.map(({ logo, alt, invert, mt }) => (
               <div
                 key={alt}
-                className={`aspect-square rounded-2xl border border-white/[0.08] bg-white/[0.06] backdrop-blur-sm flex items-center justify-center p-4 shadow-2xl ${mt}`}
+                className={`aspect-square rounded-2xl glass border border-blue-500/20 bg-blue-950/20 flex items-center justify-center p-4 shadow-2xl hover:border-blue-400/50 hover:bg-blue-900/40 hover:accent-glow-blue transition-all duration-300 ${mt}`}
               >
                 <Image
                   src={logo} alt={alt} width={40} height={40}
-                  className={`w-full h-full object-contain ${invert ? "invert opacity-80" : "drop-shadow-lg"}`}
+                  className={`w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] ${invert ? "invert opacity-90" : ""}`}
                 />
               </div>
             ))}

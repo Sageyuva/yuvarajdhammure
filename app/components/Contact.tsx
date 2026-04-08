@@ -61,16 +61,16 @@ export default function Contact() {
           <h3 className="text-3xl font-bold text-white leading-tight">
             Have a project in mind?
             <br />
-            <span className="text-zinc-600">Let&apos;s make it real.</span>
+            <span className="text-blue-400">Let&apos;s make it real.</span>
           </h3>
-          <p className="text-zinc-500 text-base leading-relaxed max-w-sm">
+          <p className="text-zinc-400 text-base leading-relaxed max-w-sm">
             Open to full-time roles, freelance work, and interesting collaborations.
           </p>
         </div>
-        <div className="flex flex-col gap-0">
+        <div className="flex flex-col gap-0 border-t border-blue-500/10">
           {INFO.map(({ label, value, href }) => (
-            <div key={label} className="flex justify-between items-center py-4 border-b border-zinc-900">
-              <span className="text-[11px] font-mono text-zinc-600 tracking-widest uppercase">{label}</span>
+            <div key={label} className="flex justify-between items-center py-4 border-b border-blue-500/10 group">
+              <span className="text-[11px] font-mono text-zinc-500 tracking-widest uppercase group-hover:text-blue-400 transition-colors duration-300">{label}</span>
               <a href={href} className="text-sm text-zinc-300 hover:text-white transition-colors">{value}</a>
             </div>
           ))}
@@ -88,40 +88,40 @@ export default function Contact() {
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label htmlFor="name" className="text-[11px] font-mono text-zinc-600 tracking-widest uppercase">Name</label>
+            <label htmlFor="name" className="text-[11px] font-mono text-zinc-500 tracking-widest uppercase">Name</label>
             <input id="name" type="text" placeholder="John Doe" required
               value={formData.name} onChange={handleChange}
               disabled={status === "loading"}
-              className="bg-zinc-900/40 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-700 focus:outline-none focus:border-zinc-600 hover:border-zinc-700 transition-colors disabled:opacity-50" />
+              className="glass border border-blue-500/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500/50 hover:border-blue-500/30 transition-colors disabled:opacity-50" />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="text-[11px] font-mono text-zinc-600 tracking-widest uppercase">Email</label>
+            <label htmlFor="email" className="text-[11px] font-mono text-zinc-500 tracking-widest uppercase">Email</label>
             <input id="email" type="email" placeholder="john@co.com" required
               value={formData.email} onChange={handleChange}
               disabled={status === "loading"}
-              className="bg-zinc-900/40 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-700 focus:outline-none focus:border-zinc-600 hover:border-zinc-700 transition-colors disabled:opacity-50" />
+              className="glass border border-blue-500/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500/50 hover:border-blue-500/30 transition-colors disabled:opacity-50" />
           </div>
         </div>
         
         <div className="flex flex-col gap-2">
-          <label htmlFor="subject" className="text-[11px] font-mono text-zinc-600 tracking-widest uppercase">Subject</label>
+          <label htmlFor="subject" className="text-[11px] font-mono text-zinc-500 tracking-widest uppercase">Subject</label>
           <input id="subject" type="text" placeholder="Project inquiry"
             value={formData.subject} onChange={handleChange}
             disabled={status === "loading"}
-            className="bg-zinc-900/40 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-700 focus:outline-none focus:border-zinc-600 hover:border-zinc-700 transition-colors disabled:opacity-50" />
+            className="glass border border-blue-500/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500/50 hover:border-blue-500/30 transition-colors disabled:opacity-50" />
         </div>
         
         <div className="flex flex-col gap-2">
-          <label htmlFor="message" className="text-[11px] font-mono text-zinc-600 tracking-widest uppercase">Message</label>
+          <label htmlFor="message" className="text-[11px] font-mono text-zinc-500 tracking-widest uppercase">Message</label>
           <textarea id="message" rows={5} placeholder="Hello Yuvaraj, I'd like to discuss..." required
             value={formData.message} onChange={handleChange}
             disabled={status === "loading"}
-            className="bg-zinc-900/40 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-700 focus:outline-none focus:border-zinc-600 hover:border-zinc-700 transition-colors resize-none disabled:opacity-50" />
+            className="glass border border-blue-500/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500/50 hover:border-blue-500/30 transition-colors resize-none disabled:opacity-50 custom-scrollbar" />
         </div>
         
         <div className="flex items-center gap-4 mt-2">
           <button type="submit" disabled={status === "loading" || status === "success"}
-            className="flex items-center gap-2.5 bg-white text-black text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-zinc-100 active:scale-95 transition-all disabled:opacity-50 disabled:hover:bg-white disabled:active:scale-100">
+            className="flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:from-blue-500 hover:to-purple-500 accent-glow-blue active:scale-95 transition-all disabled:opacity-50 disabled:hover:from-blue-600 disabled:hover:to-purple-600 disabled:active:scale-100">
             {status === "loading" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
             {status === "loading" ? "Sending..." : status === "success" ? "Message sent" : "Send message"}
           </button>

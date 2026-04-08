@@ -27,16 +27,17 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "py-4 bg-black/80 backdrop-blur-xl border-b border-white/[0.04]"
+          ? "py-4 glass border-b border-blue-500/10 shadow-lg"
           : "py-6 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#home" className="flex items-center gap-2 group">
-          <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">
+        <Link href="#home" className="flex items-center gap-2 group relative">
+          <span className="text-sm font-bold tracking-[0.2em] text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all duration-300">
             YD
           </span>
+          <div className="absolute -inset-2 bg-blue-500/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
         </Link>
 
         {/* Desktop links */}
@@ -45,14 +46,14 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[13px] font-medium text-zinc-500 hover:text-white tracking-wide transition-colors duration-200"
+              className="text-[13px] font-medium text-zinc-400 hover:text-blue-200 tracking-wide transition-colors duration-200"
             >
               {link.name}
             </Link>
           ))}
           <a
             href="mailto:yuvarajdhammure@gmail.com"
-            className="ml-2 text-[13px] font-semibold text-black bg-white rounded-full px-5 py-2 hover:bg-zinc-200 transition-colors"
+            className="ml-2 text-[13px] font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full px-5 py-2 hover:from-blue-500 hover:to-purple-500 accent-glow-blue transition-all duration-300"
           >
             Hire me
           </a>
@@ -70,20 +71,20 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full inset-x-0 bg-black/95 backdrop-blur-xl border-b border-white/[0.04] px-6 pt-4 pb-8 flex flex-col gap-1">
+        <div className="md:hidden absolute top-full inset-x-0 glass border-b border-blue-500/10 px-6 pt-4 pb-8 flex flex-col gap-1 shadow-2xl">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="py-3 text-base font-medium text-zinc-400 hover:text-white border-b border-zinc-900 transition-colors"
+              className="py-3 text-base font-medium text-zinc-400 hover:text-blue-300 border-b border-blue-500/10 transition-colors"
             >
               {link.name}
             </Link>
           ))}
           <a
             href="mailto:yuvarajdhammure@gmail.com"
-            className="mt-6 text-center text-sm font-semibold text-black bg-white rounded-full px-5 py-3 hover:bg-zinc-200 transition-colors"
+            className="mt-6 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full px-5 py-3 hover:from-blue-500 hover:to-purple-500 accent-glow-blue transition-all duration-300"
           >
             Hire me
           </a>

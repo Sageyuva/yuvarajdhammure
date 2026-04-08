@@ -46,20 +46,20 @@ export default function LoadingScreen() {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center gap-8"
+      className="fixed inset-0 z-[100] bg-[#0a0e1a] flex flex-col items-center justify-center gap-8"
     >
       {/* Progress bar */}
-      <div className="w-48 h-px bg-zinc-900 overflow-hidden">
+      <div className="w-48 h-px bg-blue-900/40 overflow-hidden relative">
         <div
           ref={lineRef}
-          className="h-full bg-white origin-left scale-x-0"
+          className="absolute inset-0 h-full bg-gradient-to-r from-blue-500 to-purple-500 origin-left scale-x-0 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
           style={{ transformOrigin: "left" }}
         />
       </div>
       {/* Text */}
       <p
         ref={textRef}
-        className="text-sm font-semibold tracking-[0.35em] text-zinc-400 uppercase opacity-0 translate-y-3"
+        className="text-sm font-semibold tracking-[0.35em] text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 uppercase opacity-0 translate-y-3"
       >
         Welcome to Yuvaraj&apos;s Lab
       </p>
