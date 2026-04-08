@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="#home" className="flex items-center gap-2 group relative">
-          <span className="text-sm font-bold tracking-[0.2em] text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all duration-300">
+          <span className="text-[15px] font-extrabold tracking-[0.25em] text-white drop-shadow-md uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all duration-300">
             YD
           </span>
           <div className="absolute -inset-2 bg-blue-500/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
@@ -46,14 +46,14 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[13px] font-medium text-zinc-400 hover:text-blue-200 tracking-wide transition-colors duration-200"
+              className="text-sm font-semibold text-zinc-300 hover:text-white drop-shadow-sm tracking-wide transition-colors duration-200"
             >
               {link.name}
             </Link>
           ))}
           <a
             href="mailto:yuvarajdhammure@gmail.com"
-            className="ml-2 text-[13px] font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full px-5 py-2 hover:from-blue-500 hover:to-purple-500 accent-glow-blue transition-all duration-300"
+            className="ml-2 text-sm font-bold tracking-wide text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full px-6 py-2.5 hover:from-blue-500 hover:to-purple-500 accent-glow-blue transition-all duration-300 text-shadow-sm"
           >
             Hire me
           </a>
@@ -61,11 +61,11 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
+          className="md:hidden p-2 text-zinc-200 hover:text-white transition-colors drop-shadow-sm"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -77,14 +77,14 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="py-3 text-base font-medium text-zinc-400 hover:text-blue-300 border-b border-blue-500/10 transition-colors"
+              className="py-3 text-[17px] font-semibold text-zinc-200 hover:text-white border-b border-blue-500/10 transition-colors drop-shadow-sm"
             >
               {link.name}
             </Link>
           ))}
           <a
             href="mailto:yuvarajdhammure@gmail.com"
-            className="mt-6 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full px-5 py-3 hover:from-blue-500 hover:to-purple-500 accent-glow-blue transition-all duration-300"
+            className="mt-6 text-center text-[15px] font-bold tracking-wide text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full px-5 py-3 hover:from-blue-500 hover:to-purple-500 accent-glow-blue transition-all duration-300"
           >
             Hire me
           </a>

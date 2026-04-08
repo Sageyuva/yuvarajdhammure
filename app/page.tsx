@@ -14,16 +14,16 @@ import FloatingResumeButton from "./components/FloatingResumeButton";
 /* ── Shared section heading ────────────────────────────────────────── */
 function SectionHeading({ num, title }: { num: string; title: string }) {
   return (
-    <div className="relative flex items-end gap-6 mb-16 pb-6 border-b border-blue-500/10">
-      <span className="text-[11px] font-mono text-blue-400/60 tracking-[0.25em] leading-none pb-0.5">
+    <div className="relative flex items-end gap-5 mb-16 pb-6 border-b border-blue-500/10">
+      <span className="text-[13px] font-mono font-bold text-blue-400 tracking-[0.3em] leading-none pb-1 drop-shadow-sm">
         {num}
       </span>
-      <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-none">
+      <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tighter leading-none drop-shadow-md">
         {title}
       </h2>
       {/* Accent underline glow */}
-      <div className="absolute bottom-0 left-0 h-px w-24 bg-gradient-to-r from-blue-500 to-purple-500 opacity-80" />
-      <div className="absolute bottom-0 left-0 h-px w-24 bg-gradient-to-r from-blue-500 to-purple-500 blur-sm opacity-60" />
+      <div className="absolute bottom-0 left-0 h-[2px] w-32 bg-gradient-to-r from-blue-500 to-purple-500 opacity-90" />
+      <div className="absolute bottom-0 left-0 h-[2px] w-32 bg-gradient-to-r from-blue-500 to-purple-500 blur-sm opacity-70" />
     </div>
   );
 }

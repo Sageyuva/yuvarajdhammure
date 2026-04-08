@@ -22,13 +22,13 @@ export default function Experience({ data }: { data: any[] }) {
           <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-4 lg:gap-12">
             {/* Meta Info */}
             <div className="flex flex-col gap-1 mt-1">
-              <span className="text-[10px] sm:text-xs font-mono text-zinc-500 tracking-[0.2em] uppercase">
+              <span className="text-xs font-mono text-zinc-400 font-medium tracking-[0.2em] uppercase">
                 {job.duration}
               </span>
-              <h3 className="text-white font-semibold text-lg sm:text-xl tracking-tight leading-snug lg:mt-3 group-hover:text-blue-200 transition-colors duration-300">
+              <h3 className="text-white font-bold text-xl sm:text-2xl tracking-tighter leading-snug lg:mt-3 group-hover:text-blue-200 transition-colors duration-300 drop-shadow-sm">
                 {job.company}
               </h3>
-              <span className="text-sm font-medium text-blue-400 mt-1">
+              <span className="text-[15px] font-semibold text-blue-300 tracking-wide mt-1 drop-shadow-sm">
                 {job.role}
               </span>
             </div>
@@ -37,8 +37,8 @@ export default function Experience({ data }: { data: any[] }) {
             <div className="flex flex-col gap-4 mt-2 lg:mt-1">
               {job.highlights.map((h: string, i: number) => (
                 <div key={i} className="flex gap-4">
-                  <span className="text-blue-500/40 mt-1 shrink-0">—</span>
-                  <p className="text-[15px] sm:text-base text-zinc-400 leading-[1.8] font-light">
+                  <span className="text-blue-500/50 mt-1 shrink-0 font-bold">—</span>
+                  <p className="text-[15px] sm:text-base text-zinc-200 leading-[1.85] font-normal">
                     {h}
                   </p>
                 </div>

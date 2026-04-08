@@ -50,7 +50,7 @@ export default function Hero({ data }: { data: any }) {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.05]"
+              className="text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold tracking-tighter text-white drop-shadow-md leading-[1.05]"
             >
               {data.name}
             </motion.h1>
@@ -58,7 +58,7 @@ export default function Hero({ data }: { data: any }) {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.32, ease: "easeOut" }}
-              className="text-sm font-mono text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 tracking-[0.2em] uppercase mt-2 font-semibold"
+              className="text-[15px] font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 tracking-[0.25em] uppercase mt-2 drop-shadow-sm"
             >
               {data.title}
             </motion.p>
@@ -81,9 +81,9 @@ export default function Hero({ data }: { data: any }) {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium text-zinc-300 glass-card hover:text-blue-200 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-300"
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-[13px] font-semibold tracking-wide text-zinc-200 glass-card hover:text-white hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-300 drop-shadow-sm"
               >
-                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <Icon className="w-4 h-4 shrink-0 text-blue-300" />
                 {label}
               </a>
             ))}
@@ -94,7 +94,7 @@ export default function Hero({ data }: { data: any }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.54, ease: "easeOut" }}
-            className="text-base text-zinc-300/90 leading-[1.8] max-w-lg"
+            className="text-base md:text-lg text-zinc-200 leading-[1.85] font-normal max-w-lg drop-shadow-sm"
           >
             {data.description}
           </motion.p>
@@ -106,10 +106,10 @@ export default function Hero({ data }: { data: any }) {
             transition={{ duration: 0.6, delay: 0.62, ease: "easeOut" }}
             className="flex items-center gap-4"
           >
-            <a href="#contact" className="px-7 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg accent-glow-blue text-sm font-semibold rounded-full hover:from-blue-500 hover:to-purple-500 hover:scale-105 active:scale-95 transition-all">
+            <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg accent-glow-blue text-[15px] font-bold tracking-wide rounded-full hover:from-blue-500 hover:to-purple-500 hover:scale-105 active:scale-95 transition-all drop-shadow-md">
               Get in touch
             </a>
-            <a href="#projects" className="px-7 py-3.5 text-sm font-semibold text-blue-100 hover:text-white glass border border-blue-500/30 rounded-full hover:border-blue-400/60 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all">
+            <a href="#projects" className="px-8 py-4 text-[15px] font-bold tracking-wide text-blue-50 hover:text-white glass border border-blue-500/30 rounded-full hover:border-blue-400/60 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all drop-shadow-sm">
               View work
             </a>
           </motion.div>
