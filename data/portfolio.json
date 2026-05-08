@@ -48,6 +48,17 @@
   },
   "experience": [
     {
+      "company": "Marrian Infra",
+      "role": "Software Engineer",
+      "duration": "04/2026 – Present",
+      "highlights": [
+        "Engineered custom CI/CD scripts to automate the deployment of full-stack applications, reducing manual deployment time and human error.",
+        "Configured and optimized Nginx reverse proxies with automated SSL/TLS termination, ensuring secure, high-performance delivery of web assets.",
+        "Provisioned and hardened Linux servers from scratch, managing the full lifecycle of the application environment including firewall configuration and resource monitoring.",
+        "Provisioned and hardened Linux servers from scratch, managing the full lifecycle of the application environment including firewall configuration and resource monitoring."
+      ]
+    },
+    {
       "company": "Datagain Services",
       "role": "React JS Developer",
       "duration": "12/2024 – 12/2025",
